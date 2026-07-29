@@ -63,7 +63,7 @@ export function About() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute top-[20%] -right-[14%] h-[58%] w-[52%] overflow-hidden rounded-xl border-8 border-background shadow-lg">
+            <div className="absolute top-[20%] right-[-14%] h-[58%] w-[52%] overflow-hidden rounded-xl  border-8 border-background shadow-lg">
               <Image
                 src={IMAGES.aboutDetail}
                 alt=""
