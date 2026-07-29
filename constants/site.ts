@@ -1,10 +1,9 @@
 export const SITE = {
-  name: "Engineer Innocent",
-  title: "Engineer Innocent — Engineering & Technology Consultant",
+  name: "MECIT Engineering",
+  title: "MECIT Engineering — Tech & Energy Engineering Solutions",
   description:
-    "Portfolio and consulting site for Engineer Innocent — software, cloud, AI, and energy systems.",
-  // Placeholder contact details — swap in real ones before launch.
-  email: "hello@engineerinnocent.com",
-  phone: "+1 (555) 010-0100",
-  location: "Available worldwide (remote)",
+    "Engineering future-ready tech and energy solutions — from software and AI to cloud and clean power, we power digital transformation globally.",
+  email: "info@mecitacng.com",
+  phone: "09022379899",
+  location: "Lagos, Nigeria",
 };

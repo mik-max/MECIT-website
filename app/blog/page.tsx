@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { SITE } from "@/constants/site";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Articles and insights from Engineer Innocent.",
+  description: `Articles and insights from ${SITE.name}.`,
 };
 
 export default function BlogPage() {
