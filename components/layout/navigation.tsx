@@ -1,11 +1,34 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useState, type MouseEvent } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/constants/nav-links";
 import { SITE } from "@/constants/site";
 import { Button } from "@/components/ui/button";
+
+// Scrolls to the section smoothly without ever putting a "#" in the address bar.
+function useAnchorClick(href: string) {
+  const pathname = usePathname();
+
+  return (event: MouseEvent<HTMLAnchorElement>) => {
+    if (pathname !== "/") return;
+
+    if (href === "/") {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const hash = href.split("#")[1];
+    const target = hash ? document.getElementById(hash) : null;
+    if (target) {
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+}
 
 function NavLink({
   href,
@@ -16,10 +39,15 @@ function NavLink({
   label: string;
   onClick?: () => void;
 }) {
+  const handleAnchorClick = useAnchorClick(href);
+
   return (
     <Link
       href={href}
-      onClick={onClick}
+      onClick={(event) => {
+        handleAnchorClick(event);
+        onClick?.();
+      }}
       className="group relative py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
     >
       {label}
@@ -30,6 +58,7 @@ function NavLink({
 
 export function Navigation() {
   const [open, setOpen] = useState(false);
+  const handleContactClick = useAnchorClick("/#contact");
 
   return (
     <header className="sticky top-0 z-50 border-b bg-background/90 backdrop-blur">
@@ -46,7 +75,9 @@ export function Navigation() {
 
         <div className="hidden md:block">
           <Button asChild className="bg-orange-600 text-white hover:bg-orange-500">
-            <Link href="/#contact">Let&apos;s Talk</Link>
+            <Link href="/#contact" onClick={handleContactClick}>
+              Let&apos;s Talk
+            </Link>
           </Button>
         </div>
 
@@ -70,7 +101,13 @@ export function Navigation() {
             />
           ))}
           <Button asChild className="mt-2 bg-orange-600 text-white hover:bg-orange-500">
-            <Link href="/#contact" onClick={() => setOpen(false)}>
+            <Link
+              href="/#contact"
+              onClick={(event) => {
+                handleContactClick(event);
+                setOpen(false);
+              }}
+            >
               Let&apos;s Talk
             </Link>
           </Button>

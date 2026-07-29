@@ -7,9 +7,8 @@ export type NavLink = {
 // Swap a href back to its route (e.g. "/about") once that section gets its own dedicated page.
 export const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
-  { label: "Projects", href: "/#projects" },
   { label: "Services", href: "/#service" },
-  { label: "Blog", href: "/#blog" },
+  { label: "Projects", href: "/#projects" },
+  { label: "About", href: "/#about" },
   { label: "Contact", href: "/#contact" },
 ];
