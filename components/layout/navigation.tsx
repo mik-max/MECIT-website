@@ -1,13 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/constants/nav-links";
 import { SITE } from "@/constants/site";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 function NavLink({
   href,
@@ -18,25 +16,14 @@ function NavLink({
   label: string;
   onClick?: () => void;
 }) {
-  const pathname = usePathname();
-  const isActive = pathname === href;
-
   return (
     <Link
       href={href}
       onClick={onClick}
-      className={cn(
-        "group relative py-2 text-sm font-medium transition-colors",
-        isActive ? "text-orange-600" : "text-muted-foreground hover:text-foreground"
-      )}
+      className="group relative py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
     >
       {label}
-      <span
-        className={cn(
-          "absolute inset-x-0 -bottom-0.5 h-0.5 origin-left bg-orange-600 transition-transform duration-300",
-          isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-        )}
-      />
+      <span className="absolute inset-x-0 -bottom-0.5 h-0.5 origin-left scale-x-0 bg-orange-600 transition-transform duration-300 group-hover:scale-x-100" />
     </Link>
   );
 }
@@ -59,7 +46,7 @@ export function Navigation() {
 
         <div className="hidden md:block">
           <Button asChild className="bg-orange-600 text-white hover:bg-orange-500">
-            <Link href="/contact">Let&apos;s Talk</Link>
+            <Link href="/#contact">Let&apos;s Talk</Link>
           </Button>
         </div>
 
@@ -83,7 +70,7 @@ export function Navigation() {
             />
           ))}
           <Button asChild className="mt-2 bg-orange-600 text-white hover:bg-orange-500">
-            <Link href="/contact" onClick={() => setOpen(false)}>
+            <Link href="/#contact" onClick={() => setOpen(false)}>
               Let&apos;s Talk
             </Link>
           </Button>

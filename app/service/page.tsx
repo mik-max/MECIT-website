@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Services } from "@/components/sections/services";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -6,12 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function ServicePage() {
-  return (
-    <section className="mx-auto max-w-4xl px-6 py-24">
-      <h1 className="text-3xl font-semibold tracking-tight">Services</h1>
-      <p className="mt-4 max-w-2xl text-muted-foreground">
-        Services content coming soon.
-      </p>
-    </section>
-  );
+  return <Services />;
 }

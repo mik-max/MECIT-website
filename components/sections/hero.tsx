@@ -41,7 +41,7 @@ export function Hero() {
               size="lg"
               className="h-12 bg-orange-600 px-6 text-base text-white hover:bg-orange-500"
             >
-              <Link href="/service">Our Services</Link>
+              <Link href="/#service">Our Services</Link>
             </Button>
             <Button
               asChild
@@ -49,7 +49,7 @@ export function Hero() {
               variant="outline"
               className="h-12 border-white/70 bg-transparent px-6 text-base text-white hover:bg-white/10 hover:text-white"
             >
-              <Link href="/contact">Let&apos;s Talk</Link>
+              <Link href="/#contact">Let&apos;s Talk</Link>
             </Button>
           </div>
         </div>
