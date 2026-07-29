@@ -77,7 +77,7 @@ export function Contact() {
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-2xl bg-card p-8 shadow-sm ring-1 ring-border"
+          className="rounded-2xl bg-card p-6 shadow-sm ring-1 ring-border sm:p-8"
         >
           <div className="space-y-5">
             <div>

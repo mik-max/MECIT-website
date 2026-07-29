@@ -63,7 +63,7 @@ export function About() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute top-[20%] right-[-14%] h-[58%] w-[52%] overflow-hidden rounded-xl  border-8 border-background shadow-lg">
+            <div className="absolute top-[20%] -right-3 h-[58%] w-[52%] overflow-hidden rounded-xl border-8 border-background shadow-lg sm:right-[-10%] lg:right-[-14%]">
               <Image
                 src={IMAGES.aboutDetail}
                 alt=""
@@ -84,7 +84,7 @@ export function About() {
                 <AccordionTrigger className="text-lg font-semibold hover:no-underline">
                   {title}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="h-auto text-muted-foreground">
                   {body}
                 </AccordionContent>
               </AccordionItem>

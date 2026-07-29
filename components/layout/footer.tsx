@@ -30,7 +30,7 @@ export function Footer() {
         <div className="relative mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-muted-foreground sm:flex-row">
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute top-0 left-1/3 -z-10 -translate-y-1/2 text-3xl leading-none font-black tracking-tight whitespace-nowrap text-[#DBDADB] select-none sm:text-4xl md:text-6xl lg:text-8xl"
+            className="pointer-events-none absolute top-0 left-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 text-4xl leading-none font-black tracking-tight whitespace-nowrap text-[#DBDADB] select-none sm:left-1/3 sm:translate-x-0 sm:text-5xl md:text-6xl lg:text-8xl"
           >
             {SITE.name}
           </span>
