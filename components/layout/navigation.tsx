@@ -1,34 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState, type MouseEvent } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/constants/nav-links";
 import { SITE } from "@/constants/site";
 import { Button } from "@/components/ui/button";
-
-// Scrolls to the section smoothly without ever putting a "#" in the address bar.
-function useAnchorClick(href: string) {
-  const pathname = usePathname();
-
-  return (event: MouseEvent<HTMLAnchorElement>) => {
-    if (pathname !== "/") return;
-
-    if (href === "/") {
-      event.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-
-    const hash = href.split("#")[1];
-    const target = hash ? document.getElementById(hash) : null;
-    if (target) {
-      event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-}
+import { useAnchorClick } from "@/hooks/use-anchor-click";
 
 function NavLink({
   href,
