@@ -25,19 +25,39 @@ type Status = "idle" | "submitting" | "success" | "error";
 export function Contact() {
   const [status, setStatus] = useState<Status>("idle");
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
-    const payload = Object.fromEntries(new FormData(form).entries());
+    const formData = new FormData(form);
+
+    const name = (formData.get("name") as string) || "";
+    const email = (formData.get("email") as string) || "";
+    const budget = (formData.get("budget") as string) || "Not specified";
+    const service = (formData.get("service") as string) || "General Inquiry";
+    const message = (formData.get("message") as string) || "";
 
     setStatus("submitting");
+
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) throw new Error("Request failed");
+      const subject = `New Project Inquiry: ${service} — ${name}`;
+      const bodyLines = [
+        `Name: ${name}`,
+        `Client Email: ${email}`,
+        `Service Interested In: ${service}`,
+        `Estimated Budget: ${budget}`,
+        ``,
+        `--- Message ---`,
+        message,
+      ];
+
+      const bodyText = bodyLines.join("\n");
+      const mailtoUrl = `mailto:${SITE.email}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(bodyText)}`;
+
+      // Launch email client with pre-formatted subject and body
+      window.location.href = mailtoUrl;
+
       setStatus("success");
       form.reset();
     } catch {
@@ -170,18 +190,18 @@ export function Contact() {
               type="submit"
               size="lg"
               disabled={status === "submitting"}
-              className="h-12 w-full bg-orange-600 text-base text-white hover:bg-orange-500"
+              className="h-12 w-full bg-orange-600 text-base text-white hover:bg-orange-500 font-semibold"
             >
-              {status === "submitting" ? "Sending…" : "Submit"}
+              {status === "submitting" ? "Opening Email App…" : "Send Message"}
             </Button>
 
             {status === "success" && (
-              <p className="text-sm text-green-600">
-                Thanks — your message has been sent. I&apos;ll be in touch soon.
+              <p className="text-sm text-green-600 font-medium">
+                Email app opened! Please click Send in your email app to deliver your message.
               </p>
             )}
             {status === "error" && (
-              <p className="text-sm text-destructive">
+              <p className="text-sm text-destructive font-medium">
                 Something went wrong. Please try again.
               </p>
             )}
