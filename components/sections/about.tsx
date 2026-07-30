@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { AnchorLink } from "@/components/ui/anchor-link";
 import {
   Accordion,
   AccordionContent,
@@ -48,7 +48,7 @@ export function About() {
             size="lg"
             className="h-12 shrink-0 bg-orange-600 px-6 text-base text-white hover:bg-orange-500"
           >
-            <Link href="/#projects">Learn More</Link>
+            <AnchorLink href="/#projects">Learn More</AnchorLink>
           </Button>
         </div>
 

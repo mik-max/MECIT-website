@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, type FormEvent } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/constants/site";
@@ -24,6 +24,14 @@ type Status = "idle" | "submitting" | "success" | "error";
 
 export function Contact() {
   const [status, setStatus] = useState<Status>("idle");
+
+  // Auto-dismiss success/error message after 5 seconds
+  useEffect(() => {
+    if (status === "success" || status === "error") {
+      const timer = setTimeout(() => setStatus("idle"), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

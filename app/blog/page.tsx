@@ -6,6 +6,7 @@ import { urlForImage } from "@/lib/sanity/image";
 import { SITE } from "@/constants/site";
 import { Calendar, Clock, ArrowRight, BookOpen } from "lucide-react";
 
+
 export const metadata: Metadata = {
   title: "Blog & Knowledge Base",
   description: `Articles, videos, and engineering insights from ${SITE.name}.`,
