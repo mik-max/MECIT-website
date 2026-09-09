@@ -2,12 +2,21 @@ import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { schemaTypes } from "./sanity/schemas";
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
+// Next.js only inlines NEXT_PUBLIC_ vars into the client bundle; the
+// Sanity CLI's own bundler (used for `sanity dev`/`sanity deploy`) only
+// inlines SANITY_STUDIO_ vars. Check both so this config works in either
+// build context.
+const projectId =
+  process.env.SANITY_STUDIO_PROJECT_ID ||
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+const dataset =
+  process.env.SANITY_STUDIO_DATASET ||
+  process.env.NEXT_PUBLIC_SANITY_DATASET ||
+  "production";
 
 if (!projectId) {
   throw new Error(
-    "NEXT_PUBLIC_SANITY_PROJECT_ID is not set. The Sanity CLI reads .env, not .env.local — make sure a .env file exists with this value before running `sanity dev`/`sanity deploy`."
+    "Sanity projectId is not set. Define NEXT_PUBLIC_SANITY_PROJECT_ID (for Next.js) and SANITY_STUDIO_PROJECT_ID (for the Sanity CLI) in .env — the CLI reads .env, not .env.local, and only inlines SANITY_STUDIO_-prefixed vars."
   );
 }
 
