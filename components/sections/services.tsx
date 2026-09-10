@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SERVICES } from "@/data/services";
 
@@ -12,8 +15,10 @@ export function Services() {
           Our Services
         </h2>
         <p className="mt-4 text-muted-foreground">
-          A full stack of engineering capability — from code to cloud to
-          clean energy.
+          Integrated technology and engineering solutions that help businesses
+          improve operational efficiency, strengthen infrastructure, embrace
+          digital transformation, and build sustainable systems for long-term
+          growth.
         </p>
       </div>
 
@@ -34,6 +39,19 @@ export function Services() {
             </CardContent>
           </Card>
         ))}
+      </div>
+
+      <div className="mt-12 flex justify-center">
+        <Button
+          asChild
+          size="lg"
+          className="h-13 gap-2 bg-orange-600 px-14 text-base font-semibold text-white hover:bg-orange-500"
+        >
+          <Link href="/service">
+            Explore our services in detail
+            <ArrowRight className="size-4" />
+          </Link>
+        </Button>
       </div>
     </section>
   );
