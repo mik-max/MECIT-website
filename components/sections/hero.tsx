@@ -18,7 +18,7 @@ export function Hero() {
   const handleContactClick = useAnchorClick("/#contact");
 
   return (
-    <section className="relative isolate flex min-h-140 items-end overflow-hidden sm:min-h-160">
+    <section className="relative isolate flex min-h-140 items-center overflow-hidden sm:min-h-160">
       <Image
         src={IMAGES.heroBackground}
         alt=""
@@ -29,10 +29,10 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/60 to-black/30" />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-20">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-24">
         <div className="max-w-3xl">
           <h1 className="text-4xl leading-tight font-bold text-white sm:text-5xl lg:text-6xl">
-            Practical Engineering for
+            Technology That Powers
             <br />
             Future-Ready Businesses
           </h1>
