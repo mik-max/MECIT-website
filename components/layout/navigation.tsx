@@ -1,10 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/constants/nav-links";
 import { SITE } from "@/constants/site";
+import { IMAGES } from "@/constants/images";
 import { Button } from "@/components/ui/button";
 import { useAnchorClick } from "@/hooks/use-anchor-click";
 
@@ -39,10 +41,17 @@ export function Navigation() {
   const handleContactClick = useAnchorClick("/#contact");
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-lg font-semibold">
-          {SITE.name}
+    <header className="sticky top-0 z-50 border-b bg-background">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+        <Link href="/" aria-label={SITE.legalName} className="flex items-center">
+          <Image
+            src={IMAGES.logo}
+            alt={SITE.legalName}
+            width={1080}
+            height={804}
+            priority
+            className="h-20 w-auto"
+          />
         </Link>
 
         <nav className="hidden gap-8 md:flex">

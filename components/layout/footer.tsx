@@ -4,7 +4,7 @@ import { SITE } from "@/constants/site";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t">
+    <footer className="border-t">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-10 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="font-semibold">{SITE.name}</p>
@@ -26,18 +26,12 @@ export function Footer() {
         </nav>
       </div>
 
-      <div className="relative overflow-hidden border-t">
-        <div className="relative mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-muted-foreground sm:flex-row">
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute top-0 left-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 text-4xl leading-none font-black tracking-tight whitespace-nowrap text-[#DBDADB] select-none sm:left-1/3 sm:translate-x-0 sm:text-5xl md:text-6xl lg:text-8xl"
-          >
-            {SITE.name}
-          </span>
-          <p className="relative z-10">
-            © {new Date().getFullYear()} {SITE.name}. All rights reserved.
+      <div className="border-t">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-muted-foreground sm:flex-row">
+          <p>
+            © {new Date().getFullYear()} {SITE.legalName}. All rights reserved.
           </p>
-          <p className="relative z-10">{SITE.location}</p>
+          <p>{SITE.location}</p>
         </div>
       </div>
     </footer>
