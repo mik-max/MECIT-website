@@ -4,6 +4,5 @@ export const IMAGES = {
   // Drop matching files into public/images/about/
   aboutMain: "/images/about/main.png",
   aboutDetail: "/images/about/detail.png",
-  // TODO: swap for an actual portrait of Innocent Nwokolo once available
-  engineerPortrait: "/images/hero1.png",
+  engineerPortrait: "/images/about/engr_innocent.jpeg",
 };
