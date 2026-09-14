@@ -27,7 +27,16 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function About() {
+export function About({
+  headingLevel = "h2",
+}: {
+  /** Page-level heading tag for "About Our Firm" — h1 when this section is the
+   * page's main heading (the standalone /about route), h2 when it's embedded
+   * under the homepage Hero's h1 (the default). */
+  headingLevel?: "h1" | "h2";
+}) {
+  const Heading = headingLevel;
+
   return (
     <section id="about" className="scroll-mt-20 py-24">
       <div className="mx-auto max-w-6xl px-6">
@@ -35,9 +44,9 @@ export function About() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <Eyebrow>About Us</Eyebrow>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            <Heading className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
               About Our Firm
-            </h2>
+            </Heading>
             <p className="mt-4 max-w-lg text-muted-foreground">
               We deliver integrated technology and engineering solutions that
               help businesses improve operational efficiency, strengthen

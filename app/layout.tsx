@@ -29,6 +29,26 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.legalName,
+  alternateName: SITE.name,
+  url: SITE.url,
+  email: SITE.email,
+  telephone: SITE.phone,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Lagos",
+    addressCountry: "NG",
+  },
+  founder: {
+    "@type": "Person",
+    name: "Innocent Nwokolo",
+    jobTitle: "Managing Director & CEO",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,6 +60,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />

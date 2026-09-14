@@ -7,8 +7,15 @@ import { cn } from "@/lib/utils";
 
 const FILTERS = ["All", ...PROJECT_CATEGORIES] as const;
 
-export function Projects() {
+export function Projects({
+  headingLevel = "h2",
+}: {
+  /** h1 on the standalone /projects route, h2 when embedded under the
+   * homepage Hero's h1 (the default). */
+  headingLevel?: "h1" | "h2";
+}) {
   const [active, setActive] = useState<(typeof FILTERS)[number]>("All");
+  const Heading = headingLevel;
 
   const filtered =
     active === "All" ? PROJECTS : PROJECTS.filter((p) => p.category === active);
@@ -20,9 +27,9 @@ export function Projects() {
           <p className="text-sm font-semibold tracking-wide text-orange-600 uppercase">
             Case Studies
           </p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+          <Heading className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
             Projects &amp; Impact
-          </h2>
+          </Heading>
           <p className="mt-4 text-muted-foreground">
             Real deployments across industry, technology, AI, and energy.
           </p>

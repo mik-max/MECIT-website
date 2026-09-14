@@ -22,8 +22,15 @@ const BUDGETS = [
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export function Contact() {
+export function Contact({
+  headingLevel = "h2",
+}: {
+  /** h1 on the standalone /contact route, h2 when embedded under the
+   * homepage Hero's h1 (the default). */
+  headingLevel?: "h1" | "h2";
+}) {
   const [status, setStatus] = useState<Status>("idle");
+  const Heading = headingLevel;
 
   // Auto-dismiss success/error message after 5 seconds
   useEffect(() => {
@@ -80,9 +87,9 @@ export function Contact() {
           <p className="text-sm font-semibold tracking-wide text-orange-600 uppercase">
             Contact Us
           </p>
-          <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+          <Heading className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
             Reach out, we&apos;re ready to collaborate
-          </h2>
+          </Heading>
           <p className="mt-4 max-w-md text-muted-foreground">
             Tell me about your project — software, cloud, AI, or energy
             systems — and I&apos;ll follow up within one business day.
