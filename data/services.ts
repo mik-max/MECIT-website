@@ -1,12 +1,4 @@
-import type { LucideIcon } from "lucide-react";
-import {
-  Code2,
-  ShieldCheck,
-  BrainCircuit,
-  Zap,
-  Network,
-  Users,
-} from "lucide-react";
+import { SERVICE_IMAGES } from "@/constants/images";
 
 export type Service = {
   title: string;
@@ -18,7 +10,7 @@ export type Service = {
   overview: string;
   /** Detailed capability list used on the dedicated /service page. */
   capabilities: string[];
-  icon: LucideIcon;
+  image: string;
 };
 
 export const SERVICES: Service[] = [
@@ -39,7 +31,7 @@ export const SERVICES: Service[] = [
       "Cloud-native application development",
       "Software maintenance and optimization",
     ],
-    icon: Code2,
+    image: SERVICE_IMAGES.softwareDevelopment,
   },
   {
     title: "Cloud & Cyber Security",
@@ -58,7 +50,7 @@ export const SERVICES: Service[] = [
       "Disaster recovery and business continuity",
       "Security assessment and risk management",
     ],
-    icon: ShieldCheck,
+    image: SERVICE_IMAGES.cloudSecurity,
   },
   {
     title: "AI & Machine Learning",
@@ -78,7 +70,7 @@ export const SERVICES: Service[] = [
       "Data analysis and visualization",
       "AI integration with existing enterprise systems",
     ],
-    icon: BrainCircuit,
+    image: SERVICE_IMAGES.aiMachineLearning,
   },
   {
     title: "Energy Systems",
@@ -98,7 +90,7 @@ export const SERVICES: Service[] = [
       "Remote monitoring and control",
       "Electrical infrastructure solutions",
     ],
-    icon: Zap,
+    image: SERVICE_IMAGES.energySystems,
   },
   {
     title: "IT Operations & Networking",
@@ -118,7 +110,7 @@ export const SERVICES: Service[] = [
       "Technical support and managed services",
       "Infrastructure performance and availability management",
     ],
-    icon: Network,
+    image: SERVICE_IMAGES.networking,
   },
   {
     title: "Consulting Services",
@@ -139,6 +131,6 @@ export const SERVICES: Service[] = [
       "Technical feasibility studies",
       "Training and capacity development",
     ],
-    icon: Users,
+    image: SERVICE_IMAGES.consulting,
   },
 ];

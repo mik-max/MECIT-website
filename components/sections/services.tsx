@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -23,14 +24,14 @@ export function Services() {
       </div>
 
       <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {SERVICES.map(({ title, description, icon: Icon }) => (
+        {SERVICES.map(({ title, description, image }) => (
           <Card
             key={title}
             className="border-border/60 transition-all hover:-translate-y-1 hover:shadow-lg"
           >
             <CardHeader>
-              <div className="flex size-12 items-center justify-center rounded-xl bg-orange-50 text-orange-600">
-                <Icon className="size-6" />
+              <div className="flex size-14 items-center justify-center overflow-hidden rounded-xl">
+                <Image src={image} alt="" width={56} height={56} className="size-14 object-contain" />
               </div>
               <CardTitle className="mt-4 text-lg">{title}</CardTitle>
             </CardHeader>

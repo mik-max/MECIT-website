@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { SERVICES } from "@/data/services";
 
@@ -24,14 +25,14 @@ export function ServicesDetail() {
         {/* Service detail blocks */}
         <div className="mt-16 space-y-8">
           {SERVICES.map(
-            ({ title, tagline, overview, capabilities, icon: Icon }, index) => (
+            ({ title, tagline, overview, capabilities, image }, index) => (
               <div
                 key={title}
                 className="grid gap-8 rounded-2xl border border-border/60 bg-card p-8 shadow-sm sm:p-10 lg:grid-cols-[1fr_1.4fr] lg:gap-12"
               >
                 <div>
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-orange-50 text-orange-600">
-                    <Icon className="size-6" />
+                  <div className="flex size-16 items-center justify-center overflow-hidden rounded-xl">
+                    <Image src={image} alt="" width={64} height={64} className="size-16 object-contain" />
                   </div>
                   <p className="mt-4 text-sm font-semibold text-orange-600">
                     {String(index + 1).padStart(2, "0")}
