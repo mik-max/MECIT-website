@@ -112,7 +112,7 @@ export function About({
 
         {/* Block B — About the founder */}
         <div className="mt-24 border-t border-border pt-16">
-          <Eyebrow>Meet The Engineer</Eyebrow>
+          <Eyebrow>Our Team</Eyebrow>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
             Innocent Nwokolo
           </h2>
