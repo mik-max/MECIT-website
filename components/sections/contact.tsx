@@ -2,6 +2,7 @@
 
 import { useState, useEffect, type FormEvent } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/constants/site";
 import { SERVICES } from "@/data/services";
@@ -11,6 +12,8 @@ const OTHER_INFO = [
   { label: SITE.phone, Icon: Phone },
   { label: SITE.location, Icon: MapPin },
 ];
+
+const WHATSAPP_HREF = `https://wa.me/${SITE.whatsapp.replace(/\D/g, "")}`;
 
 const BUDGETS = [
   "Under $5,000",
@@ -106,6 +109,21 @@ export function Contact({
                   <span className="text-sm text-muted-foreground">{label}</span>
                 </li>
               ))}
+              <li>
+                <a
+                  href={WHATSAPP_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-3"
+                >
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-background text-orange-600 ring-1 ring-border transition-colors group-hover:bg-orange-600 group-hover:text-white">
+                    <FaWhatsapp className="size-4" />
+                  </span>
+                  <span className="text-sm text-muted-foreground transition-colors group-hover:text-foreground">
+                    Chat on WhatsApp
+                  </span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>

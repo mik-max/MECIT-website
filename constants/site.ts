@@ -16,7 +16,8 @@ export const SITE = {
   description:
     "Integrated technology and engineering solutions across software, AI, telecommunications, IT infrastructure, cybersecurity, and energy systems.",
   email: "info@mecitacng.com",
-  phone: "09022379899",
-  location: "Lagos, Nigeria",
+  phone: "09022379886",
+  whatsapp: "+2348032621237",
+  location: "44 Ogundele Avenue, Ogba, Lagos.",
   url: SITE_URL,
 };

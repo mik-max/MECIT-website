@@ -39,7 +39,8 @@ const organizationJsonLd = {
   telephone: SITE.phone,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Lagos",
+    streetAddress: "44 Ogundele Avenue",
+    addressLocality: "Ogba, Lagos",
     addressCountry: "NG",
   },
   founder: {
