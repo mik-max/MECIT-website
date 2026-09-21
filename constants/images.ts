@@ -5,6 +5,8 @@ export const IMAGES = {
   aboutMain: "/images/about/main.png",
   aboutDetail: "/images/about/detail.png",
   engineerPortrait: "/images/about/engr_innocent.png",
+  visionIcon: "/images/about/vision.png",
+  missionIcon: "/images/about/mission.png",
 };
 
 // Drop matching files into public/images/services/

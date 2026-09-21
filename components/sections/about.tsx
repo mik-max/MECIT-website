@@ -48,12 +48,11 @@ export function About({
               About Our Firm
             </Heading>
             <p className="mt-4 max-w-lg text-muted-foreground">
-              We deliver integrated technology and engineering solutions that
-              help businesses improve operational efficiency, strengthen
-              infrastructure, embrace digital transformation, and build
-              sustainable systems for long-term growth — combining engineering
-              excellence with emerging technologies from concept to
-              implementation.
+              MECITAC Nigeria Limited is a Nigerian engineering and technology
+              company incorporated in 2011 with the Corporate Affairs
+              Commission (CAC) to provide innovative, reliable, and
+              integrated engineering and digital technology solutions to
+              businesses, institutions, and organizations.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -107,6 +106,51 @@ export function About({
                 className="object-cover"
               />
             </div>
+          </div>
+        </div>
+
+        {/* Block A.2 — Mission & Vision */}
+        <div className="mt-24 grid gap-6 sm:grid-cols-2">
+          <div className="rounded-2xl border border-border/60 bg-card p-8 shadow-sm">
+            <div className="flex size-14 items-center justify-center overflow-hidden rounded-xl">
+              <Image
+                src={IMAGES.visionIcon}
+                alt=""
+                width={56}
+                height={56}
+                className="size-14 object-contain"
+              />
+            </div>
+            <h3 className="mt-4 text-xl font-semibold tracking-tight">
+              Our Vision
+            </h3>
+            <p className="mt-3 text-muted-foreground">
+              To become a leading African engineering and technology
+              solutions company, delivering intelligent, secure, and
+              sustainable solutions that create lasting value for our
+              clients and communities.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-border/60 bg-card p-8 shadow-sm">
+            <div className="flex size-14 items-center justify-center overflow-hidden rounded-xl">
+              <Image
+                src={IMAGES.missionIcon}
+                alt=""
+                width={56}
+                height={56}
+                className="size-14 object-contain"
+              />
+            </div>
+            <h3 className="mt-4 text-xl font-semibold tracking-tight">
+              Our Mission
+            </h3>
+            <p className="mt-3 text-muted-foreground">
+              To integrate engineering excellence with emerging technologies
+              to solve complex business and infrastructure challenges, while
+              delivering reliable, scalable, and innovative solutions that
+              enable our clients to grow and thrive.
+            </p>
           </div>
         </div>
 
