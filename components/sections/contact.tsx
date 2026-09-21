@@ -43,7 +43,7 @@ export function Contact({
     }
   }, [status]);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -57,24 +57,13 @@ export function Contact({
     setStatus("submitting");
 
     try {
-      const subject = `New Project Inquiry: ${service} — ${name}`;
-      const bodyLines = [
-        `Name: ${name}`,
-        `Client Email: ${email}`,
-        `Service Interested In: ${service}`,
-        `Estimated Budget: ${budget}`,
-        ``,
-        `--- Message ---`,
-        message,
-      ];
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, budget, service, message }),
+      });
 
-      const bodyText = bodyLines.join("\n");
-      const mailtoUrl = `mailto:${SITE.email}?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(bodyText)}`;
-
-      // Launch email client with pre-formatted subject and body
-      window.location.href = mailtoUrl;
+      if (!response.ok) throw new Error("Request failed");
 
       setStatus("success");
       form.reset();
@@ -225,17 +214,18 @@ export function Contact({
               disabled={status === "submitting"}
               className="h-12 w-full bg-orange-600 text-base text-white hover:bg-orange-500 font-semibold"
             >
-              {status === "submitting" ? "Opening Email App…" : "Send Message"}
+              {status === "submitting" ? "Sending…" : "Send Message"}
             </Button>
 
             {status === "success" && (
               <p className="text-sm text-green-600 font-medium">
-                Email app opened! Please click Send in your email app to deliver your message.
+                Message sent! We&apos;ll get back to you within one business day.
               </p>
             )}
             {status === "error" && (
               <p className="text-sm text-destructive font-medium">
-                Something went wrong. Please try again.
+                Something went wrong. Please try again, or reach out via
+                WhatsApp or phone instead.
               </p>
             )}
           </div>
