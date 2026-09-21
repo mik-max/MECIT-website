@@ -2,7 +2,18 @@ import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { AnchorLink } from "@/components/ui/anchor-link";
 import { Button } from "@/components/ui/button";
+import { FounderBio } from "@/components/sections/founder-bio";
 import { IMAGES } from "@/constants/images";
+
+const FOUNDER_BIO = [
+  `Engr. Innocent Nwokolo is the Managing Director and Chief Executive Officer of MECITAC Nigeria Limited, where he leads the company's strategic direction and delivery of technology and engineering solutions across software, artificial intelligence, telecommunications, IT infrastructure, cybersecurity, and energy systems.`,
+  `With a strong foundation in Electrical/Electronic Engineering and Information and Communication Engineering, Innocent has built a multidisciplinary career at the intersection of engineering, telecommunications, intelligent systems, and digital innovation.`,
+  `He holds a B.Eng. in Electrical/Electronic Engineering from Bells University of Technology and an M.Eng. in Information and Communication Engineering from Covenant University.`,
+  `He is a COREN-registered Engineer, a member of the Nigerian Society of Engineers (NSE) and the Nigerian Institute of Electrical and Electronic Engineers (NIEEE), with more than 20 specialized professional certifications from global technology organizations, including IBM and Google.`,
+  `His technical interests and professional expertise include Artificial Intelligence, Machine Learning, Generative AI, Deep Learning, MLOps, cloud technologies, telecommunications infrastructure, networking, and intelligent automation.`,
+  `In addition to his corporate responsibilities, Innocent contributes to technology education and capacity development as a Volunteer Lead Facilitator for AI & Machine Learning at Bells University of Technology. Through teaching, mentoring, and research, he connects academic knowledge with practical industry applications and equips emerging engineers with the skills required to solve real-world problems.`,
+  `At MECITAC, his leadership is driven by a clear objective to combine engineering excellence with emerging technologies to create practical solutions that improve efficiency, strengthen infrastructure, and enable organizations to thrive in a rapidly evolving digital economy.`,
+];
 
 const STATS = [
   { value: "6", label: "Integrated service areas" },
@@ -188,54 +199,7 @@ export function About({
               </ul>
             </div>
 
-            <div className="space-y-4 text-justify text-muted-foreground">
-              <p>
-                Engr. Innocent Nwokolo is the Managing Director and Chief
-                Executive Officer of MECITAC Nigeria Limited, where he leads the
-                company&apos;s strategic direction and its delivery of technology
-                and engineering solutions across software, artificial
-                intelligence, telecommunications, IT infrastructure,
-                cybersecurity, and energy systems.
-              </p>
-              <p>
-                With a strong foundation in Electrical/Electronics Engineering
-                and Information and Communication Engineering, Innocent has built
-                a multidisciplinary career at the intersection of engineering,
-                telecommunications, intelligent systems, and digital innovation.
-              </p>
-              <p>
-                He holds a B.Eng. in Electrical/Electronics Engineering from
-                Bells University of Technology and an M.Eng. in Information and
-                Communication Engineering from Covenant University. He is a COREN
-                registered Engineer, a member of the Nigerian Society of
-                Engineers (NSE) and the National Institute of
-                Electrical/Electronics Engineers (NIEEE), and has obtained more
-                than 20 specialized professional certifications from global
-                technology organizations including IBM and Google.
-              </p>
-              <p>
-                His technical interests and professional expertise include
-                Artificial Intelligence, Machine Learning, Generative AI, Deep
-                Learning, MLOps, cloud technologies, telecommunications
-                infrastructure, networking, and intelligent automation.
-              </p>
-              <p>
-                In addition to his corporate responsibilities, Innocent
-                contributes to technology education and capacity development as a
-                Volunteer Lead Facilitator for AI &amp; Machine Learning at Bells
-                University of Technology. Through teaching, mentoring, and
-                research, he works to connect academic knowledge with practical
-                industry applications and equip emerging engineers with the
-                skills required to solve real-world problems.
-              </p>
-              <p>
-                At MECITAC, his leadership is driven by a clear objective: to
-                combine engineering excellence with emerging technologies to
-                create practical solutions that improve efficiency, strengthen
-                infrastructure, and enable organizations to thrive in a rapidly
-                evolving digital economy.
-              </p>
-            </div>
+            <FounderBio paragraphs={FOUNDER_BIO} />
           </div>
         </div>
       </div>
