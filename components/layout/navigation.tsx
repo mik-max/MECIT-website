@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/constants/nav-links";
@@ -9,6 +10,7 @@ import { SITE } from "@/constants/site";
 import { IMAGES } from "@/constants/images";
 import { Button } from "@/components/ui/button";
 import { useAnchorClick } from "@/hooks/use-anchor-click";
+import { cn } from "@/lib/utils";
 
 function NavLink({
   href,
@@ -20,6 +22,8 @@ function NavLink({
   onClick?: () => void;
 }) {
   const handleAnchorClick = useAnchorClick(href);
+  const pathname = usePathname();
+  const isActive = href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <Link
@@ -28,10 +32,19 @@ function NavLink({
         handleAnchorClick(event);
         onClick?.();
       }}
-      className="group relative py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+      aria-current={isActive ? "page" : undefined}
+      className={cn(
+        "group relative py-2 text-sm font-medium transition-colors",
+        isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+      )}
     >
       {label}
-      <span className="absolute inset-x-0 -bottom-0.5 h-0.5 origin-left scale-x-0 bg-orange-600 transition-transform duration-300 group-hover:scale-x-100" />
+      <span
+        className={cn(
+          "absolute inset-x-0 -bottom-0.5 h-0.5 origin-left bg-orange-600 transition-transform duration-300",
+          isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+        )}
+      />
     </Link>
   );
 }
