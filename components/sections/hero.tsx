@@ -5,7 +5,6 @@ import Link from "next/link";
 import { FaFacebookF, FaLinkedinIn, FaWhatsapp } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { IMAGES } from "@/constants/images";
-import { useAnchorClick } from "@/hooks/use-anchor-click";
 
 const SOCIAL_LINKS = [
   { label: "Facebook", href: "#", Icon: FaFacebookF },
@@ -14,8 +13,6 @@ const SOCIAL_LINKS = [
 ];
 
 export function Hero() {
-  const handleServicesClick = useAnchorClick("/#service");
-
   return (
     <section className="relative isolate flex min-h-140 items-center overflow-hidden sm:min-h-160">
       <Image
@@ -46,9 +43,7 @@ export function Hero() {
               size="lg"
               className="h-12 bg-orange-600 px-6 text-base text-white hover:bg-orange-500"
             >
-              <Link href="/#service" onClick={handleServicesClick}>
-                Our Services
-              </Link>
+              <Link href="/service">Our Services</Link>
             </Button>
             <Button
               asChild

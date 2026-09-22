@@ -80,7 +80,7 @@ export function About({
                 variant="outline"
                 className="h-12 px-6 text-base"
               >
-                <AnchorLink href="/#service">Our Services</AnchorLink>
+                <AnchorLink href="/service">Our Services</AnchorLink>
               </Button>
             </div>
 
