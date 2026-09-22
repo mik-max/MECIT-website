@@ -9,7 +9,6 @@ import { AnchorLink } from "@/components/ui/anchor-link";
 import { SITE } from "@/constants/site";
 import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useAnchorClick } from "@/hooks/use-anchor-click";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -142,7 +141,7 @@ export default async function BlogPostPage({ params }: Props) {
             size="lg"
             className="mt-6 sm:mt-0 shrink-0 bg-orange-600 text-white hover:bg-orange-500 font-semibold px-6 h-12"
           >
-            <AnchorLink href="/#contact">Get in Touch</AnchorLink>
+            <AnchorLink href="/contact">Get in Touch</AnchorLink>
           </Button>
         </div>
       </div>

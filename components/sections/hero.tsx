@@ -15,7 +15,6 @@ const SOCIAL_LINKS = [
 
 export function Hero() {
   const handleServicesClick = useAnchorClick("/#service");
-  const handleContactClick = useAnchorClick("/#contact");
 
   return (
     <section className="relative isolate flex min-h-140 items-center overflow-hidden sm:min-h-160">
@@ -57,9 +56,7 @@ export function Hero() {
               variant="outline"
               className="h-12 border-white/70 bg-transparent px-6 text-base text-white hover:bg-white/10 hover:text-white"
             >
-              <Link href="/#contact" onClick={handleContactClick}>
-                Let&apos;s Talk
-              </Link>
+              <Link href="/contact">Let&apos;s Talk</Link>
             </Button>
           </div>
         </div>

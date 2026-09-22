@@ -38,7 +38,6 @@ function NavLink({
 
 export function Navigation() {
   const [open, setOpen] = useState(false);
-  const handleContactClick = useAnchorClick("/#contact");
 
   return (
     <header className="sticky top-0 z-50 border-b bg-background">
@@ -62,9 +61,7 @@ export function Navigation() {
 
         <div className="hidden md:block">
           <Button asChild className="bg-orange-600 text-white hover:bg-orange-500">
-            <Link href="/#contact" onClick={handleContactClick}>
-              Let&apos;s Talk
-            </Link>
+            <Link href="/contact">Let&apos;s Talk</Link>
           </Button>
         </div>
 
@@ -88,13 +85,7 @@ export function Navigation() {
             />
           ))}
           <Button asChild className="mt-2 bg-orange-600 text-white hover:bg-orange-500">
-            <Link
-              href="/#contact"
-              onClick={(event) => {
-                handleContactClick(event);
-                setOpen(false);
-              }}
-            >
+            <Link href="/contact" onClick={() => setOpen(false)}>
               Let&apos;s Talk
             </Link>
           </Button>

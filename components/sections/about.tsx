@@ -72,7 +72,7 @@ export function About({
                 size="lg"
                 className="h-12 bg-orange-600 px-6 text-base text-white hover:bg-orange-500"
               >
-                <AnchorLink href="/#contact">Get in Touch</AnchorLink>
+                <AnchorLink href="/contact">Get in Touch</AnchorLink>
               </Button>
               <Button
                 asChild
