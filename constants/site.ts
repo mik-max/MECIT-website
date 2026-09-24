@@ -1,6 +1,3 @@
-// TODO: once the production domain is confirmed, set NEXT_PUBLIC_SITE_URL
-// (or hardcode it here) so sitemap.xml / robots.txt / JSON-LD point at the
-// real domain instead of the Vercel-assigned one.
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ??
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
@@ -10,12 +7,14 @@ const SITE_URL =
       : "http://localhost:3000");
 
 export const SITE = {
-  name: "MECITAC",
-  legalName: "MECITAC Nigeria Limited",
-  title: "MECITAC — Technology & Engineering Solutions",
+  name: "Technogenix",
+  legalName: "Technogenix LTD",
+  title: "Technogenix — Technology & Engineering Solutions",
   description:
     "Integrated technology and engineering solutions across software, AI, telecommunications, IT infrastructure, cybersecurity, and energy systems.",
-  email: "info@mecitacng.com",
+  // TODO: confirm the technogenixng.com mailbox is actually live (Zoho setup
+  // was still mid-verification as of this change) before relying on this.
+  email: "info@technogenixng.com",
   phone: "09022379886",
   whatsapp: "+2349022379886",
   location: "44 Ogundele Avenue, Ogba, Lagos.",

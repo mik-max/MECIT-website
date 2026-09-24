@@ -6,13 +6,13 @@ import { FounderBio } from "@/components/sections/founder-bio";
 import { IMAGES } from "@/constants/images";
 
 const FOUNDER_BIO = [
-  `Engr. Innocent Nwokolo is the Managing Director and Chief Executive Officer of MECITAC Nigeria Limited, where he leads the company's strategic direction and delivery of technology and engineering solutions across software, artificial intelligence, telecommunications, IT infrastructure, cybersecurity, and energy systems.`,
+  `Engr. Innocent Nwokolo is the Managing Director and Chief Executive Officer of Technogenix LTD, where he leads the company's strategic direction and delivery of technology and engineering solutions across software, artificial intelligence, telecommunications, IT infrastructure, cybersecurity, and energy systems.`,
   `With a strong foundation in Electrical/Electronic Engineering and Information and Communication Engineering, Innocent has built a multidisciplinary career at the intersection of engineering, telecommunications, intelligent systems, and digital innovation.`,
   `He holds a B.Eng. in Electrical/Electronic Engineering from Bells University of Technology and an M.Eng. in Information and Communication Engineering from Covenant University.`,
   `He is a COREN-registered Engineer, a member of the Nigerian Society of Engineers (NSE) and the Nigerian Institute of Electrical and Electronic Engineers (NIEEE), with more than 20 specialized professional certifications from global technology organizations, including IBM and Google.`,
   `His technical interests and professional expertise include Artificial Intelligence, Machine Learning, Generative AI, Deep Learning, MLOps, cloud technologies, telecommunications infrastructure, networking, and intelligent automation.`,
   `In addition to his corporate responsibilities, Innocent contributes to technology education and capacity development as a Volunteer Lead Facilitator for AI & Machine Learning at Bells University of Technology. Through teaching, mentoring, and research, he connects academic knowledge with practical industry applications and equips emerging engineers with the skills required to solve real-world problems.`,
-  `At MECITAC, his leadership is driven by a clear objective to combine engineering excellence with emerging technologies to create practical solutions that improve efficiency, strengthen infrastructure, and enable organizations to thrive in a rapidly evolving digital economy.`,
+  `At Technogenix, his leadership is driven by a clear objective to combine engineering excellence with emerging technologies to create practical solutions that improve efficiency, strengthen infrastructure, and enable organizations to thrive in a rapidly evolving digital economy.`,
 ];
 
 const STATS = [
@@ -59,7 +59,7 @@ export function About({
               About Our Firm
             </Heading>
             <p className="mt-4 max-w-lg text-muted-foreground">
-              MECITAC Nigeria Limited is a Nigerian engineering and technology
+              Technogenix LTD is a Nigerian engineering and technology
               company incorporated in 2011 with the Corporate Affairs
               Commission (CAC) to provide innovative, reliable, and
               integrated engineering and digital technology solutions to
@@ -172,7 +172,7 @@ export function About({
             Innocent Nwokolo
           </h2>
           <p className="mt-2 text-sm font-semibold text-orange-600">
-            Managing Director &amp; CEO — MECITAC Nigeria Limited
+            Managing Director &amp; CEO — Technogenix LTD
           </p>
 
           <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
