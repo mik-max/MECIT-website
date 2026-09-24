@@ -98,22 +98,13 @@ export function About({
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md lg:mx-0">
+          <div className="mx-auto w-full max-w-md lg:mx-0">
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-muted">
               <Image
                 src={IMAGES.aboutMain}
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 40vw, 90vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="absolute top-[20%] -right-3 h-[58%] w-[52%] overflow-hidden rounded-xl border-8 border-background shadow-lg sm:right-[-10%] lg:right-[-14%]">
-              <Image
-                src={IMAGES.aboutDetail}
-                alt=""
-                fill
-                sizes="300px"
                 className="object-cover"
               />
             </div>
