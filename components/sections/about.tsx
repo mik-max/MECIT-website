@@ -60,7 +60,7 @@ export function About({
             </Heading>
             <p className="mt-4 max-w-lg text-muted-foreground">
               Technogenix LTD is a Nigerian engineering and technology
-              company incorporated in 2011 with the Corporate Affairs
+              company incorporated in 2026 with the Corporate Affairs
               Commission (CAC) to provide innovative, reliable, and
               integrated engineering and digital technology solutions to
               businesses, institutions, and organizations.
