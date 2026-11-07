@@ -12,9 +12,7 @@ export const SITE = {
   title: "Technogenix — Technology & Engineering Solutions",
   description:
     "Integrated technology and engineering solutions across software, AI, telecommunications, IT infrastructure, cybersecurity, and energy systems.",
-  // TODO: confirm the technogenixng.com mailbox is actually live (Zoho setup
-  // was still mid-verification as of this change) before relying on this.
-  email: "info@technogenixng.com",
+  email: "info@technogenixng.com.ng",
   phone: "09022379886",
   whatsapp: "+2349022379886",
   location: "44 Ogundele Avenue, Ogba, Lagos.",
