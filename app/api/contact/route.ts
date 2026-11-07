@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { SITE } from "@/constants/site";
 
-const FROM_ADDRESS = "Technogenix Website <no-reply@technogenixng.com.ng>";
+const FROM_ADDRESS = "Technogenix Website <no-reply@technogenix.com.ng>";
 
 export async function POST(request: Request) {
   const body = await request.json();

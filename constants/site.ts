@@ -12,7 +12,7 @@ export const SITE = {
   title: "Technogenix — Technology & Engineering Solutions",
   description:
     "Integrated technology and engineering solutions across software, AI, telecommunications, IT infrastructure, cybersecurity, and energy systems.",
-  email: "info@technogenixng.com.ng",
+  email: "info@technogenix.com.ng",
   phone: "09022379886",
   whatsapp: "+2349022379886",
   location: "44 Ogundele Avenue, Ogba, Lagos.",
